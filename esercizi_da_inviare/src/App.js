@@ -1,8 +1,10 @@
-import Welcome from "./Welcome"
+import Counter from "./Counter"
 
 const App = () =>{
     return(
-        <Welcome name="Mark" age={25}/>
+        <>
+            <Counter />
+        </>
     )
 }
 

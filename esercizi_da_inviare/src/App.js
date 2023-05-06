@@ -1,15 +1,9 @@
-import Age from "./Age"
+import Welcome from "./Welcome"
 
+const App = () =>{
+    return(
+        <Welcome name="Pietro" age={25}/>
+    )
+}
 
-
-const Welcome = ({name = <strong>Pietro</strong>}) => {
-            return (
-                <>
-                    <p>Welcome, {name}</p>
-                    <Age/>
-                </>
-            )
-} 
-
-export default Welcome
-
+export default App

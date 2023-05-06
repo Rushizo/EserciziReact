@@ -1,13 +1,13 @@
 import { useEffect, useState } from "react"
 
-const Counter = () => {
-    const [counter, setCounter] = useState(0)
+const Counter = (props) => {
+    const [counter, setCounter] = useState(props.start)
     
 
     useEffect(() => {
         const interval = setInterval(() => {
-            setCounter(counter => counter + 1)
-        }, 1000);
+            setCounter((counter) => counter + props.incrementAmount)
+        }, props.incrementInterval);
        
     }, [])
 
@@ -18,6 +18,3 @@ const Counter = () => {
 
 export default Counter
 
-// setInterval(() => {
-//     setCounter(counter => counter + 1)
-// }, 1000)

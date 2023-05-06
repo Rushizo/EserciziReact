@@ -3,7 +3,7 @@ import Counter from "./Counter"
 const App = () =>{
     return(
         <>
-            <Counter />
+            <Counter start={10} incrementAmount={1} incrementInterval={1000} />
         </>
     )
 }

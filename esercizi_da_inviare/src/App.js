@@ -1,9 +1,9 @@
-import ClickTracker from "./ClickTracker"
+import InteractiveWelcome from "./InteractiveWelcome"
 
 const App = () =>{
     return(
         <>
-            <ClickTracker  />
+            <InteractiveWelcome  />
         </>
     )
 }

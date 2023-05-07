@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react"
+import CounterDisplay from "./CounterDisplay";
 
 const Counter = (props) => {
     const [counter, setCounter] = useState(props.start)
@@ -12,7 +13,7 @@ const Counter = (props) => {
     }, [])
 
     return(
-        <h1>{counter}</h1>
+        <CounterDisplay counter={counter}/>
     )
 }
 

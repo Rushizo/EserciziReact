@@ -14,7 +14,10 @@ const Login = () => {
     
     const isDisabled = userName === "" || password === "";
     
-
+    const handleReset = (event) => {
+        setUserName("")
+        setPassword("")
+    }
     
 
     return(
@@ -23,6 +26,7 @@ const Login = () => {
                 <input type="Text" onChange={handleName}></input>
                 <input type="password" onChange={handlePassword}></input>
                 <button disabled={isDisabled}>Login</button>
+                <button onClick={handleReset}>Reset</button>
             </form>
         </>
     )

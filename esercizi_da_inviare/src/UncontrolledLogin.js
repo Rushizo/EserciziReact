@@ -1,29 +1,33 @@
+import React from "react"
 
+class UncontrolledLogin extends React.Component {
+    handleLogin = (event) => {
+        event.preventDefault();
+        const username = event.target.elements.username.value
+        const password = event.target.elements.password.value
+        const remember = event.target.elements.remember.checked
 
-const UncontrolledLogin = () => {
-
-    const handleFormSubmit = (event) => {
-        event.preventDefault()
-        
-        const username = event.target.username.value = "";
-        const password = event.target.password.value = "";
-
-        
-        const ciao = true ? username === "" || password === "" : false
-        
+        console.log({
+            username,
+            password,
+            remember,
+        });
     }
 
 
-    return(
-        <>
-            <form onSubmit={handleFormSubmit}>
-                <input type="Text" name="username"></input>
-                <input type="password" name="password"></input>
-                <button name="login" type="submit" >Login</button>
-                <button>Reset</button>
-            </form>
-        </>
-    )
+    render() {
+        return (
+            <>
+                <form onSubmit={this.handleLogin}>
+                    <input name="username" autoFocus/>
+                    <input name="password" type="password"/>
+                    <input name="remember" type="checkbox"/>
+                    <button type="submit">Login</button>
+                    <button type="reset">Reset</button>
+                </form>
+            </>
+        )
+    }
 }
 
-export default UncontrolledLogin
+export default UncontrolledLogin;

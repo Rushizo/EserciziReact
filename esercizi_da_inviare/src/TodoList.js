@@ -20,16 +20,29 @@ const TodoList = () => {
         setText("")
     }
 
+    const handleRemoveLI = (id) => {
+        const newArr = [...items];
+        newArr.splice(id, 1);
+        setItems(newArr)
+    }
 
     return(
         <>
             <ul>
-                {items.map((item, index) => <li key={index}>{item}</li>)}
+                {items.map((item, index) => {
+                    return(
+                        <>
+                            <li key={index} index={index}>{item}</li>
+                            <button onClick={() => {handleRemoveLI(index)}}>Remove</button>
+                        </>
+                    )
+                })}
             </ul>
             <form>
                 <input type="text" value={text} placeholder="Scrivi..." onChange={handleText}/>
                 <button onClick={handleItem}>Aggiungi</button>
                 <button onClick={handleResert}>Reset</button>
+
             </form>
         </>
     )

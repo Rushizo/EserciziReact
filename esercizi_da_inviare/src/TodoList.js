@@ -15,6 +15,11 @@ const TodoList = () => {
         setText("") 
     }
 
+    const handleResert = () => {
+        setItems([])
+        setText("")
+    }
+
 
     return(
         <>
@@ -24,6 +29,7 @@ const TodoList = () => {
             <form>
                 <input type="text" value={text} placeholder="Scrivi..." onChange={handleText}/>
                 <button onClick={handleItem}>Aggiungi</button>
+                <button onClick={handleResert}>Reset</button>
             </form>
         </>
     )

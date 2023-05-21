@@ -15,16 +15,18 @@ const GithubUser = (props) => {
         })
     }, [props.username])
 
-    return <div>
+    return (
+    <div>
         {data && (
         <>
-        <div>
-        <h1>{data.name}</h1>
-        <p>{data.login}</p>
-        </div>
+            <div>
+                {data.name ? (<h1>{data.name}</h1>) : (<p>This account doesn't have login name!</p>)}
+                <p>{data.login}</p>
+            </div>
         </>
         )}
     </div>
+    )
 }
 
 export default GithubUser

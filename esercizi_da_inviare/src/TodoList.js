@@ -1,7 +1,7 @@
 import { useState } from "react"
 
 
-const TodoList = () => {
+const TodoList = (props) => {
     const [items, setItems] = useState([])
     const [text, setText] = useState("")
 
@@ -28,15 +28,8 @@ const TodoList = () => {
 
     return(
         <>
-            <ul>
-                {items.map((item, index) => {
-                    return(
-                        <>
-                            <li key={index} index={index}>{item}</li>
-                            <button onClick={() => {handleRemoveLI(index)}}>Remove</button>
-                        </>
-                    )
-                })}
+            <ul>     
+                {props.renderArr(items, handleRemoveLI)}
             </ul>
             <form>
                 <input type="text" value={text} placeholder="Scrivi..." onChange={handleText}/>

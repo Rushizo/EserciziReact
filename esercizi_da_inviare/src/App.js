@@ -4,11 +4,22 @@ import TodoList from "./TodoList"
 
 
 const App = () =>{
+    renderArr = (arr, remove) => {
+        return arr.map((item, index) => {
+          return(
+            <>
+                <li index={index}>{item}</li>
+              <button onClick={() => remove(index)}>remove this</button>
+            </>
+          )
+        })
+      }
+    
     return(
         <>
             <InteractiveWelcome  />
             <Login />
-            <TodoList />
+            <TodoList renderArr={renderArr}/>
             
         </>
     )

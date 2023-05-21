@@ -1,28 +1,31 @@
-import InteractiveWelcome from "./InteractiveWelcome"
-import Login from "./Login"
-import TodoList from "./TodoList"
+import React from "react";
+import DisplayLanguage, { LanguageContext } from "./DisplayLanguage";
 
+class App extends React.Component {
+  state = {
+    language: "en",
+  };
 
-const App = () =>{
-    renderArr = (arr, remove) => {
-        return arr.map((item, index) => {
-          return(
-            <>
-                <li index={index}>{item}</li>
-              <button onClick={() => remove(index)}>remove this</button>
-            </>
-          )
-        })
-      }
-    
-    return(
-        <>
-            <InteractiveWelcome  />
-            <Login />
-            <TodoList renderArr={renderArr}/>
-            
-        </>
-    )
+  handleLanguageChange = (event) => {
+    this.setState({
+      language: event.target.value,
+    });
+  };
+
+  render() {
+    return (
+      <div>
+        <select value={this.state.language} onChange={this.handleLanguageChange}>
+          <option value="en">English</option>
+          <option value="it">Italian</option>
+        </select>
+        <LanguageContext.Provider value={this.state.language}>
+        <DisplayLanguage />
+        </LanguageContext.Provider>
+      
+      </div>
+    );
+  }
 }
 
 export default App

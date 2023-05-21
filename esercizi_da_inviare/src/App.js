@@ -10,9 +10,10 @@ const App = () => {
         <>
         <Routes>
            <Route path="users" >
-              <Route path="list" element={<GithubUserList />} >
                 <Route path=":username" element={<ShowGithubUser/>} />
-              </Route>
+                <Route path="list" element={<GithubUserList />} >
+                    <Route index element={<p>Add a user and select it</p>}/>
+                </Route>
            </Route>
         </Routes>
 
@@ -24,3 +25,4 @@ const App = () => {
 }
 
 export default App
+

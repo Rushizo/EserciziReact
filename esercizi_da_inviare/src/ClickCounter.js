@@ -1,16 +1,22 @@
 import React from 'react'
+import { useState } from "react"
 import { useEffect } from "react"
  
-const ClickCounter = (props) => {
-  
-  useEffect(() => props.change, [props.counter,props.change])
-      
+const ClickCounter = () => {
+    const [counter, setCounter] = useState(0);
+
+    useEffect(() => {
+      let prova = setInterval(() => {setCounter((count) => count + 1)},3000)
+
+      return () => {
+        clearInterval(prova)
+        console.log("ciao")
+      }
+    }, [counter])
+
     return (
         <div>
-          <h1>{props.counter}</h1>
-          <div>
-            <button onClick={props.increase}>One more!</button>
-          </div>
+          <h1>{counter}</h1>
         </div>
       );
 }

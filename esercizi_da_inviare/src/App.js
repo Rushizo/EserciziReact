@@ -1,11 +1,11 @@
-import GithubUser from "./GithubUser"
+import ClickCounter from "./ClickCounter"
 
 
 const App = () => {
 
     return(
         <div>
-            <GithubUser username={"Rushizo"} />
+            <ClickCounter />
         </div>
     )
 

@@ -1,19 +1,30 @@
-import CarForm from "./CarForm"
+import React from "react";
+import DisplayLanguage from "./DisplayLanguage";
+import { LanguageContext } from "./LanguageContext"
+import { useState } from "react"
 
 const App = () => {
 
-  let initialData = {
-  name: "Fiat",
-  model: "Punto",
-  year: "2003",
-  color: "Bianca"
-  }
+  const [language, setLanguage] = useState ("en")
 
-return (
+  function handleLanguageChange (event){
+    setLanguage(event.target.value) 
+  };
+
+    return (
       <>
-        <CarForm initialData={initialData}/>
+      <div>
+        <b>Current language: </b>
+        <select value={language} onChange={handleLanguageChange}>
+          <option value="en">English</option>
+          <option value="it">Italian</option>
+        </select>
+        <LanguageContext.Provider value={language}>
+        <DisplayLanguage />
+        </LanguageContext.Provider>
+      </div>
       </>
-    );
+    )
 }
 
 export default App

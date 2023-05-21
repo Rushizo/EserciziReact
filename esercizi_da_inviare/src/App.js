@@ -1,11 +1,9 @@
-import Clickcounter from "./ClickCounter"
+import HandleForm from "./HandleForm"
 
-const App = () => {
+export default function App() {
     return(
         <>
-          <Clickcounter />
+            <HandleForm />
         </>
     )
 }
-
-export default App

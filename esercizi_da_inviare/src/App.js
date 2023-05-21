@@ -8,7 +8,9 @@ const App = () => {
     return(
         <>
         <Routes>
-            <Route path="users/:username" element={<ShowGithubUser />} />       
+            <Route path="/" element={<ShowGithubUser />} />
+            <Route path="users/:username" element={<ShowGithubUser />} />  
+            <Route path="*" element={<h1>Page not found!</h1>} />      
         </Routes>
         <p><Link to="users/rushizo">Link to my repository</Link></p>
         <p><Link to="users/yangus98">Link to my friend's repository</Link></p>
